@@ -49,13 +49,10 @@ const timer = {
            refs.minutes.textContent = minutes;
            refs.seconds.textContent = seconds;
 
-           if (refs.day.textContent == 00 &&
-            refs.hours.textContent == 00 &&
-            refs.minutes.textContent == 00 &&
-            refs.seconds.textContent == 00) {
+           if (refs.day.textContent == 00 && refs.hours.textContent == 00 && refs.minutes.textContent == 00 && refs.seconds.textContent == 00) {
             clearInterval(id);
            }
-           //console.log(`${days}: ${hours}: ${minutes}: ${seconds}`);
+           
      }, 1000);
     }
 
