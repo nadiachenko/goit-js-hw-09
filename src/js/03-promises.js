@@ -28,7 +28,7 @@ function createPromise(position, delay) {
     });
 
 }
-//console.log("firstDelay promise", delay)
+//console.log("firstDelay promise", delay2)
 function reer(e) {
     e.preventDefault();
     const amount = Number(refs.amountField.value);
