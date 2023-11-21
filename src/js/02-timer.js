@@ -22,28 +22,32 @@ enableTime: true,
   onClose(selectedDates) {
       if (selectedDates[0] < currentDate) {
         window.alert("Please choose a date in the future");
-      } else {
+      } 
+      else {
         refs.startBtn.disabled = false;
       }
-    
   },
 });
 
 const timer = {
+    
     isActive: false,
     start() {
+        
         if(this.isActive){
+           
             return;
         }
         this.isActive = true;
         const id = setInterval(() => {
+            
             const ccurrentDate = Date.now();
             const selectedDate = new Date(refs.dateInput.value);
             selectedDate.getTime();
            const timeDifference = selectedDate.getTime() - ccurrentDate;
            //const convertedTime = convertMs(timeDifference);
            const { days, hours, minutes, seconds } = convertMs(timeDifference);
-
+          
            refs.day.textContent = days;
            refs.hours.textContent = hours;
            refs.minutes.textContent = minutes;
@@ -60,6 +64,8 @@ const timer = {
 
 refs.startBtn.addEventListener('click', () => {
     timer.start();
+    refs.startBtn.disabled = true;
+    
 })
 
 function convertMs(ms) {
